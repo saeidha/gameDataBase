@@ -17,4 +17,15 @@ db.serialize(() => {
   });
 });
 
-module.exports = db;
+function insertUser(name, callback) {
+    const stmt = db.prepare('INSERT INTO user (name) VALUES (?)');
+    stmt.run(name, function (err) {
+      callback(err, this.lastID);
+    });
+    stmt.finalize();
+  }
+
+module.exports = {
+  db,
+  insertUser
+};

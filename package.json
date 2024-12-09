@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/saeidha/gameDataBase#readme",
   "dependencies": {
+    "body-parser": "^1.20.3",
     "express": "^4.21.2",
     "sqlite3": "^5.1.7"
   }
